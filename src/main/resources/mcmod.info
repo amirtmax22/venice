@@ -1,0 +1,9 @@
+[{
+  "modid": "trestage",
+  "name": "Trestage",
+  "description": "Combat client focused on one thing: a KillAura that does not get flagged.",
+  "version": "${version}",
+  "mcversion": "1.8.9",
+  "authorList": ["you"],
+  "type": "client"
+}]
