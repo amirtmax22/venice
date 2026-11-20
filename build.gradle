@@ -1,10 +1,15 @@
+
 buildscript {
     repositories {
-        maven { url = "https://maven.minecraftforge.net/" }
         mavenCentral()
+        maven {
+            url = "https://maven.minecraftforge.net/"
+        }
     }
     dependencies {
-        classpath "net.minecraftforge.gradle:ForgeGradle:2.3-SNAPSHOT"
+        classpath("com.anatawa12.forge:ForgeGradle:2.3-1.0.+") {
+            changing = true
+        }
     }
 }
 
@@ -24,7 +29,9 @@ minecraft {
     makeObfSourceJar = false
 }
 
-repositories { mavenCentral() }
+repositories {
+    mavenCentral()
+}
 
 processResources {
     inputs.property "version", project.version
@@ -32,5 +39,7 @@ processResources {
         include "mcmod.info"
         expand "version": project.version
     }
-    from(sourceSets.main.resources.srcDirs) { exclude "mcmod.info" }
+    from(sourceSets.main.resources.srcDirs) {
+        exclude "mcmod.info"
+    }
 }
